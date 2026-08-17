@@ -111,7 +111,6 @@ ul,ol { list-style:none; }
 .pb-list li { display:flex; gap:1rem; border-bottom:1px solid var(--hairline); padding-bottom:1.25rem; color:var(--navy); }
 .pb-list li:last-child { border-bottom:none; }
 .pb-dash { margin-top:.5rem; height:1px; width:1.5rem; flex-shrink:0; background:var(--gold); }
-.pb-check { margin-top:.25rem; flex-shrink:0; color:var(--emerald); }
 
 /* ===== Process ===== */
 .svc-process { background:var(--navy); color:var(--ivory); padding-block:7rem; }
