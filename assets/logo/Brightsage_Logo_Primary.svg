@@ -1,0 +1,40 @@
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dac099"/>
+      <stop offset="55%" stop-color="#bc8f4d"/>
+      <stop offset="100%" stop-color="#9c7238"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="900" height="260" fill="#f8f7f3"/>
+
+  <!-- Mark: circular badge -->
+  <g transform="translate(130,130)">
+    <circle cx="0" cy="0" r="92" fill="#101c28"/>
+    <circle cx="0" cy="0" r="92" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#dac099" stroke-width="0.75" opacity="0.5"/>
+
+    <!-- Ascending bars motif (growth) forming abstract B-spine -->
+    <g fill="url(#goldGrad)">
+      <rect x="-46" y="6" width="14" height="40" rx="1.5"/>
+      <rect x="-22" y="-14" width="14" height="60" rx="1.5"/>
+      <rect x="2" y="-34" width="14" height="80" rx="1.5"/>
+      <rect x="26" y="-50" width="14" height="96" rx="1.5"/>
+    </g>
+    <!-- rising line accent -->
+    <path d="M -46 20 L -15 -6 L 9 -22 L 33 -44" fill="none" stroke="#f8f7f3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <circle cx="33" cy="-44" r="4.5" fill="#f8f7f3"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="256" y1="60" x2="256" y2="200" stroke="#d2d1cd" stroke-width="1"/>
+
+  <!-- Wordmark -->
+  <g transform="translate(292,0)">
+    <text x="0" y="128" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="64" fill="#101c28" letter-spacing="0.5">Brightsage</text>
+    <text x="3" y="168" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="24" fill="#bc8f4d" letter-spacing="6">EZZENTIAL</text>
+    <rect x="3" y="182" width="46" height="2" fill="#bc8f4d"/>
+    <text x="3" y="206" font-family="'IBM Plex Sans', Arial, sans-serif" font-size="14" fill="#5a5a52" letter-spacing="3">GLOBAL SERVICES</text>
+  </g>
+</svg>
