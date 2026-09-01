@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact — Brightsage Ezzential </title>
+  <title>Contact — Brightsage Ezzential</title>
   <meta name="description"
     content="Request a confidential consultation. Corporate office in Lagos, Nigeria. Executive advisory response within one business day.">
   <link rel="icon" href="favicon.png" type="image/png">
@@ -21,10 +21,9 @@
 </head>
 
 <body class="bg-ivory min-h-screen">
-  <!-- ===== NAV ===== -->
   <header class="site-nav">
     <div class="site-nav-inner">
-      <a href="index.html" class="brand"><img src="assets/logo/Brightsage_Logo_Icon.svg" alt="" class="brand-mark"><span
+      <a href="index.html" class="brand"><img src="assets/logo/Brightsage_Logo_Icon.svg" alt="Brightsage Ezzential" class="brand-mark"><span
           class="brand-name">Brightsage</span><span class="brand-sub">Ezzential</span></a>
       <nav class="nav-links">
         <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a
@@ -45,7 +44,6 @@
     </div>
   </header>
 
-  <!-- ===== PAGE HERO ===== -->
   <section class="page-hero">
     <img src="assets/contact-lobby.jpg" alt="" class="page-hero-img">
     <div class="page-hero-overlay"></div>
@@ -60,7 +58,6 @@
   <!-- ===== CONTACT MAIN ===== -->
   <section class="contact-main">
     <div class="contact-main-inner">
-      <!-- DETAILS -->
       <div class="contact-details">
         <span class="eyebrow">Office</span>
         <span class="gold-rule" style="margin-top:2rem"></span>
@@ -85,7 +82,7 @@
             </svg>
             <div>
               <div class="contact-detail-label">Email</div>
-              <a href="mailto:info@brightsage.ng" class="contact-detail-value link-underline">brightsageezzential@gmail.com</a>
+              <a href="mailto:brightsageezzential@gmail.com" class="contact-detail-value link-underline">brightsageezzential@gmail.com</a>
             </div>
           </li>
           <li class="contact-detail-item">
@@ -123,13 +120,14 @@
         </ul>
       </div>
 
-      <!-- FORM -->
       <div class="contact-form-col">
         <span class="eyebrow">Corporate enquiry</span>
         <h2>Tell us about your business.</h2>
         <span class="gold-rule" style="margin-top:2rem"></span>
 
-        <div id="formWrap" class="form-grid">
+        <form id="formWrap" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-grid">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none"><label>Leave this field blank: <input name="bot-field"></label></p>
           <div class="form-field"><label>Full name <span class="req">*</span></label><input type="text" name="name"
               required></div>
           <div class="form-field"><label>Company <span class="req">*</span></label><input type="text" name="company"
@@ -140,7 +138,7 @@
           <div class="form-field"><label>Role / title</label><input type="text" name="role"></div>
           <div class="form-field"><label>Industry</label><input type="text" name="industry"></div>
           <div class="form-field form-full"><label>Area of interest</label>
-            <select>
+            <select name="interest">
               <option>Business Development</option>
               <option>Accounts Implementation</option>
               <option>Financial Services</option>
@@ -151,12 +149,12 @@
             </select>
           </div>
           <div class="form-field form-full"><label>Briefly describe your requirement <span
-                class="req">*</span></label><textarea rows="5" required></textarea></div>
+                class="req">*</span></label><textarea rows="5" name="message" required></textarea></div>
           <div class="form-footer">
-            <p class="form-footer-note">All enquiries are treated as strictly confidential and privileged.</p>
+            <p class="form-footer-note" id="formNote">All enquiries are treated as strictly confidential and privileged.</p>
             <button type="submit" class="form-submit" id="submitBtn">Submit enquiry</button>
           </div>
-        </div>
+        </form>
 
         <div id="formSuccess" class="form-success" style="display:none">
           <h3>Thank you.</h3>
@@ -166,7 +164,6 @@
     </div>
   </section>
 
-  <!-- ===== MAP PLACEHOLDER ===== -->
   <!-- <section class="map-sec">
     <div class="map-sec-inner">
       <img src="assets/contact-lobby.jpg" alt="Office lobby" loading="lazy">
@@ -180,12 +177,11 @@
     </div>
   </section> -->
 
-  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-brand-header"><img src="assets/logo/Brightsage_Logo_Icon.svg" alt=""
+          <div class="footer-brand-header"><img src="assets/logo/Brightsage_Logo_Icon.svg" alt="Brightsage Ezzential"
               class="footer-brand-mark"><span class="footer-brand-name">Brightsage</span><span
               class="footer-brand-sub">Ezzential</span></div>
           <span class="gold-rule" style="margin-top:1.5rem"></span>
@@ -249,7 +245,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Brightsage Ezzential . All rights reserved.</p>
+        <p>© 2026 Brightsage Ezzential. All rights reserved.</p>
         <p>Chartered · Certified · Compliant</p>
       </div>
     </div>
@@ -259,15 +255,19 @@
     (function () {
       var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
       t.addEventListener('click', function () { m.classList.toggle('open'); });
-      var btn = document.getElementById('submitBtn');
-      var wrap = document.getElementById('formWrap');
+      var form = document.getElementById('formWrap');
       var success = document.getElementById('formSuccess');
-      btn.addEventListener('click', function (e) {
+      var note = document.getElementById('formNote');
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var inputs = wrap.querySelectorAll('input[required],textarea[required]');
+        var inputs = form.querySelectorAll('input[required],textarea[required]');
         var ok = true;
         for (var i = 0; i < inputs.length; i++) { if (!inputs[i].value) { ok = false; } }
-        if (ok) { wrap.style.display = 'none'; success.style.display = 'block'; }
+        if (!ok) { return; }
+        var body = new URLSearchParams(new FormData(form)).toString();
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+          .then(function () { form.style.display = 'none'; success.style.display = 'block'; })
+          .catch(function () { note.textContent = 'Something went wrong sending this. Please email brightsageezzential@gmail.com directly.'; });
       });
     })();
   </script>

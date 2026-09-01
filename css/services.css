@@ -131,6 +131,7 @@ ul,ol { list-style:none; }
 .footer-grid { display:grid; gap:3rem; }
 @media (min-width:1024px){ .footer-grid{ grid-template-columns:repeat(12,1fr); } }
 @media (min-width:1024px){ .footer-brand{ grid-column:span 5; } .footer-col.col-2{ grid-column:span 2; } .footer-col.col-3{ grid-column:span 3; } }
+.footer-brand-mark { width:40px; height:40px; flex-shrink:0; }
 .footer-brand-name { font-family:var(--font-display); font-size:1.5rem; color:var(--ivory); }
 .footer-brand-sub { font-family:var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing:.25em; color:var(--gold); }
 .footer-brand p { margin-top:1.5rem; max-width:28rem; font-size:14px; line-height:1.6; color:rgba(247,246,242,.6); }

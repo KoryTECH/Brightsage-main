@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://brightsage.ng/sitemap.xml
+Sitemap: https://brightsageezzential.com/sitemap.xml
